@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Verificar si se han proporcionado los argumentos necesarios
+if [ $# -ne 2 ]; then
+    echo "Uso: $0 <directorio> <palabra>"
+    echo "Ejemplo: $0 /home documento"
+    exit 1
+fi
+
+# Asignar argumentos a variables
+DIRECTORIO=$1
+PALABRA=$2
+
+# Ejecutar el comando find
+/usr/bin/find "$DIRECTORIO" -name "*$PALABRA*"
